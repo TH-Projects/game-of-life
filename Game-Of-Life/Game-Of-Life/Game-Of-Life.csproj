@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AFBD4570-2CB7-4BD3-B053-13DAF7EDF1D3}</ProjectGuid>
+    <ProjectGuid>{AB9BEE79-6498-42BD-84D0-B46BA9C09911}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Game_Of_Life</RootNamespace>
     <AssemblyName>Game-Of-Life</AssemblyName>
@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Components\ResponsiveLabel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,6 +66,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\ResponsiveLabel.xaml.cs">
+      <DependentUpon>ResponsiveLabel.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

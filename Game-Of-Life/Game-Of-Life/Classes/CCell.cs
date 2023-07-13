@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game_Of_Life.Classes
 {
-    internal class CCell
+    abstract class CCell
     {
     }
 }

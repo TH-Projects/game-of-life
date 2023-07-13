@@ -23,6 +23,20 @@ namespace Game_Of_Life
         public MainWindow()
         {
             InitializeComponent();
+            renderField(20);
+        }
+
+        public void renderField(int fieldSize)
+        {
+            cells_grid.ShowGridLines = true;
+            for (int i = 0; i < fieldSize; i++)
+            {
+                ColumnDefinition col = new ColumnDefinition();
+                RowDefinition row = new RowDefinition();
+
+                cells_grid.ColumnDefinitions.Add(col);
+                cells_grid.RowDefinitions.Add(row);
+            }
         }
     }
 }
