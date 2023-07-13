@@ -25,6 +25,7 @@
                 <uc:ResponsiveLabel
                     Text="Game Of Life"
                     MaxTextHeight="60"
+                    Margin="4"
                     >
                 </uc:ResponsiveLabel>
             </Grid>
@@ -37,7 +38,7 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="1" x:Name="cells_grid">
+            <Grid Grid.Column="1" x:Name="cells_grid" Margin="5">
                 
             </Grid>
             
@@ -54,9 +55,35 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="1">
-                
+                <Button 
+                        VerticalAlignment="Stretch" 
+                        HorizontalAlignment="Stretch" 
+                        Margin="50 15 50 10"
+                    Click="Stop_Reset_Click"
+                        >
+                    <Viewbox MaxHeight="30" 
+                             MinHeight="10" 
+                             Margin="10">
+                        <TextBlock Text="Stop/Reset"/>
+                    </Viewbox>
+                </Button>
             </Grid>
-            
+
+            <Grid Grid.Column="3">
+                <Button 
+                        VerticalAlignment="Stretch" 
+                        HorizontalAlignment="Stretch" 
+                        Margin="50 15 50 10"
+                        Click="Start_Click"
+                        >
+                    <Viewbox MaxHeight="30" 
+                             MinHeight="10" 
+                             Margin="10">
+                        <TextBlock Text="Start"/>
+                    </Viewbox>
+                </Button>
+            </Grid>
+
         </Grid>
         
         

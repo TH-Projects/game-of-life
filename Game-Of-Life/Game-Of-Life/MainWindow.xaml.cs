@@ -20,15 +20,17 @@ namespace Game_Of_Life
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Game gameInstance;
         public MainWindow()
         {
             InitializeComponent();
-            renderField(20);
+            RenderField(40);
+            InitCells();
+            gameInstance = new Game(this);
         }
 
-        public void renderField(int fieldSize)
+        public void RenderField(int fieldSize)
         {
-            cells_grid.ShowGridLines = true;
             for (int i = 0; i < fieldSize; i++)
             {
                 ColumnDefinition col = new ColumnDefinition();
@@ -37,6 +39,49 @@ namespace Game_Of_Life
                 cells_grid.ColumnDefinitions.Add(col);
                 cells_grid.RowDefinitions.Add(row);
             }
+        }
+
+        public void InitCells()
+        {
+            for (int i = 0; i < 40; i++)
+            {
+                for (int j = 0; j < 40; j++)
+                {
+                    Button l = new Button();
+                    l.Background = new SolidColorBrush(Colors.White);
+                    l.Click += new RoutedEventHandler(onCellClick);
+                    Grid.SetColumn(l, i);
+                    Grid.SetRow(l, j);
+                    cells_grid.Children.Add(l);
+                }
+            }
+        }
+
+        private void onCellClick(object sender, RoutedEventArgs e)
+        {
+            Button clickedCell = (Button)sender;
+
+            Brush cellColor = clickedCell.Background;
+            SolidColorBrush solidCellColorBrush = (SolidColorBrush)cellColor;
+           
+            if(solidCellColorBrush.Color == Colors.White)
+            {
+                clickedCell.Background = new SolidColorBrush(Colors.Blue);
+            }
+            else
+            {
+                clickedCell.Background = new SolidColorBrush(Colors.White);
+            }
+        }
+
+		private void Start_Click(object sender, RoutedEventArgs e)
+		{
+
+        }
+
+		private void Stop_Reset_Click(object sender, RoutedEventArgs e)
+		{
+
         }
     }
 }
