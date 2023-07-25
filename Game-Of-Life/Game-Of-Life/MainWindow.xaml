@@ -38,11 +38,12 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
+            
+
             <Grid Grid.Column="1" x:Name="cells_grid" Margin="5">
-                
+
             </Grid>
-            
-            
+
         </Grid>
 
         <Grid Grid.Row="2">
@@ -59,7 +60,7 @@
                         VerticalAlignment="Stretch" 
                         HorizontalAlignment="Stretch" 
                         Margin="50 15 50 10"
-                    Click="Stop_Reset_Click"
+                       Click="onStopClick"
                         >
                     <Viewbox MaxHeight="30" 
                              MinHeight="10" 
@@ -69,12 +70,38 @@
                 </Button>
             </Grid>
 
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <uc:ResponsiveLabel 
+                        x:Name="lbl_RoundCounter"
+                    Text="Runde: 0"
+                    MaxTextHeight="30"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    />
+                </Grid>
+                
+            </Grid>
+
+
             <Grid Grid.Column="3">
                 <Button 
                         VerticalAlignment="Stretch" 
                         HorizontalAlignment="Stretch" 
                         Margin="50 15 50 10"
-                        Click="Start_Click"
+                        Click="onClickStart"
                         >
                     <Viewbox MaxHeight="30" 
                              MinHeight="10" 
@@ -83,9 +110,6 @@
                     </Viewbox>
                 </Button>
             </Grid>
-
         </Grid>
-        
-        
     </Grid>
 </Window>
