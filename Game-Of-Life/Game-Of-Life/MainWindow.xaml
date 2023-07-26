@@ -60,7 +60,7 @@
                         VerticalAlignment="Stretch" 
                         HorizontalAlignment="Stretch" 
                         Margin="50 15 50 10"
-                       Click="onStopClick"
+                       Click="OnStopClick"
                         >
                     <Viewbox MaxHeight="30" 
                              MinHeight="10" 
@@ -101,7 +101,7 @@
                         VerticalAlignment="Stretch" 
                         HorizontalAlignment="Stretch" 
                         Margin="50 15 50 10"
-                        Click="onClickStart"
+                        Click="OnClickStart"
                         >
                     <Viewbox MaxHeight="30" 
                              MinHeight="10" 

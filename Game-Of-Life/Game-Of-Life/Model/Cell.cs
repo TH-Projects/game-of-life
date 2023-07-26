@@ -10,34 +10,38 @@ namespace Game_Of_Life.Class
 {
 	public abstract class Cell
 	{
-		protected bool isAlive = false;
-		protected bool nextStatus = true;
-		protected SolidColorBrush color = new SolidColorBrush(Colors.White);
+		protected bool _isAlive = false;
+		protected bool _nextStatus = true;
+		protected SolidColorBrush _color = new SolidColorBrush(Colors.White);
 
-		
-
-		public bool IsAlive { get => isAlive; 
+		public bool IsAlive { get => _isAlive; 
 			set
 			{
 				if (value)
 				{
-					isAlive = true;
-					color = new SolidColorBrush(Colors.Blue);
+					_isAlive = true;
+					_color = new SolidColorBrush(Colors.Blue);
 				}
 				else
 				{
-					isAlive = false;
-					color = new SolidColorBrush(Colors.White);
+					_isAlive = false;
+					_color = new SolidColorBrush(Colors.White);
 				}
 			} 
 		}
 
 		public bool NextStatus { get; set; }
 
-		public SolidColorBrush Color { get => color; set => color = value; }
+		public SolidColorBrush Color { get => _color; set => _color = value; }
 
-		public abstract void CalcNextStatus(List<Cell> influencingCells);
-		public abstract void ApplyNextGeneration();
+		public abstract void CalculateNextStatus(List<Cell> influencingCells); //calculates if the status of the cell for the next round
+
+		public abstract int CountAliveNeighbors(List<Cell> neighbors); //counts how many cells of parameter list are alive
+
+		public void ApplyNextGeneration() //applies the calculated next status on the current one
+		{
+			IsAlive = _nextStatus;
+		}
 		
 	}
 }

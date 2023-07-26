@@ -73,7 +73,7 @@
     <Compile Include="Components\ResponsiveLabel.xaml.cs">
       <DependentUpon>ResponsiveLabel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controller\Game.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

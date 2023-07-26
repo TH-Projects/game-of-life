@@ -8,16 +8,14 @@ namespace Game_Of_Life.Class
 {
 	public class NeumannCell : Cell
 	{
-		public override void ApplyNextGeneration()
-		{
-			throw new NotImplementedException();
-		}
-
-		public override void CalcNextStatus(List<Cell> influencingCells)
+		public override void CalculateNextStatus(List<Cell> influencingCells)
         {
             throw new NotImplementedException();
         }
 
-		
+		public override int CountAliveNeighbors(List<Cell> neighbors)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
